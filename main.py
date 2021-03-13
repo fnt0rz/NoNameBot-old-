@@ -1,5 +1,6 @@
 import discord
 import os
+from keep_alive import keep_alive
 
 intents = discord.Intents.default()
 intents.members = True
@@ -17,5 +18,5 @@ async def on_member_join(member):
   channel = client.get_channel(820241232222748692)
   await channel.send('Hello {0}!'.format(member.name))
 
-
+keep_alive()
 client.run(os.getenv('TOKEN'))
